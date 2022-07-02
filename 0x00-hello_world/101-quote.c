@@ -13,5 +13,3 @@ int main(void)
 	write(2, var, sizeof(var) - 1);
 	return (1);
 }
-Footer
-© 2022 GitHub, Inc.
