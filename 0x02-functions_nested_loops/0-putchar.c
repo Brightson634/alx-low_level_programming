@@ -2,9 +2,9 @@
 
 
 /**
-*_putchar-a program that prints _putchar, followed by a new line.
+*main-a program that prints _putchar, followed by a new line.
 */
-int main()
+void main(void)
 {
 _putchar('_');
 _putchar('p');
@@ -15,5 +15,4 @@ _putchar('h');
 _putchar('a');
 _putchar('r');
 _putchar('\n');
-return 0;
 }
