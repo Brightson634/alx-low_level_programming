@@ -5,14 +5,9 @@
 
  * jack_bauer - every minute of the day of jack bauer
 
- *
-
  * Created - Twine
 
  * cc: 7th july, 2022
-
- *
-
  */
 
 
