@@ -4,14 +4,11 @@
 * main - find sum of multiples of 3 and 5 less than 1024
 *Return: 0 if successful
 */
-
 int main(void)
 
 {
 
 	int ii, _sum;
-
-
 
 	for (ii = 3; ii < 1024; ii++)
 
