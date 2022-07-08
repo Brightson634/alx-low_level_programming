@@ -1,64 +1,93 @@
-#include <stdio.h>
-#define LARGEST 10000000000
+lude <stdio.h>
+
+
 
 /**
- * main - main block
-*Return: 0
-*/
+ * main - print the first 98 fibonacci numbers
+ * Return: Nothing.
+ */
 
-	int main(void)
 
-	{
 
-	unsigned long int fr1 = 0, bk1 = 1, fr2 = 0, bk2 = 2;
+int main(void)
 
-	unsigned long int hold1, hold2, hold3;
+{
 
 	int count;
 
-	printf("%lu, %lu, ", bk1, bk2);
+	unsigned long i, j, k;
 
-	for (count = 2; count < 98; count++)
+	unsigned long m, n, p, carry;
+
+
+
+	count = 0;
+
+	i = 0;
+
+	j = 1;
+
+
+
+	for (count = 1; count <= 91; count++)
 
 	{
 
-		if (bk1 + bk2 > LARGEST || fr2 > 0 || fr1 > 0)
+		k = i + j;
 
-		{
+		i = j;
 
-			hold1 = (bk1 + bk2) / LARGEST;
+		j = k;
 
-			hold2 = (bk1 + bk2) % LARGEST;
-
-			hold3 = fr1 + fr2 + hold1;
-
-			fr1 = fr2, fr2 = hold3;
-
-			bk1 = bk2, bk2 = hold2;
-
-			printf("%lu%010lu", fr2, bk2);
-
-		}
-
-		else
-
-		{
-
-			hold2 = bk1 + bk2;
-
-			bk1 = bk2, bk2 = hold2;
-
-			printf("%lu", bk2);
-
-		}
-
-		if (count != 97)
-
-			printf(", ");
+		printf("%lu, ", k);
 
 	}
 
-	printf("\n");
+	m = i % 1000;
+
+	i = i / 1000;
+
+	n = j % 1000;
+
+	j = j / 1000;
+
+
+
+	while (count <= 98)
+
+	{
+
+		carry = (m + n) / 1000;
+
+		p = (m + n) - carry * 1000;
+
+		k = (i + j) + carry;
+
+		m = n;
+
+		n = p;
+
+		i = j;
+
+		j = k;
+
+		if (p >= 100)
+
+			printf("%lu%lu", k, p);
+
+		else
+
+			printf("%lu0%lu", k, p);
+
+		if (count != 98)
+
+			printf(", ");
+
+		count++;
+
+	}
+
+	putchar('\n');
 
 	return (0);
 

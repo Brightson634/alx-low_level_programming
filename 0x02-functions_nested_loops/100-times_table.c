@@ -5,9 +5,9 @@
  * @var: variable to be printed
  */
 
-void print(int var)
+	void print(int var)
 
-{
+	{
 
 	if (var / 10)
 
@@ -15,16 +15,16 @@ void print(int var)
 
 	_putchar('0' + (var % 10));
 
-}
+	}
 
 /**
  * print_times_table - prints the n times table, starting with 0
  * @n: time table to print
  */
 
-void print_times_table(int n)
+	void print_times_table(int n)
 
-{
+	{
 
 	int ii, jj, mul;
 
