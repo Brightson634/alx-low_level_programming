@@ -2,12 +2,12 @@
 
 /**
 * _strlen - print the length of a given string
-*
-*@s: given pointer string
 */
-	int _strlen(char *s)
+void _strlen(void)
 	{
+	int *str;
 
-	s = ("Hello there! I love Alx programming");
-	 _strlen(s);
+	str = "Hello there! I love Alx programming";
+
+	 _strlen(str);
 	}
