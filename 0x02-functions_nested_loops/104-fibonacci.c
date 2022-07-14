@@ -1,94 +1,44 @@
-lude <stdio.h>
-
-
-
+#include <stdlib.h>
+#include <stdio.h>
 /**
- * main - print the first 98 fibonacci numbers
- * Return: Nothing.
+ * main - another test on fibonnaci
+ * Description: getting used to fibonnacci
+ * Return: 0
  */
-
-
-
 int main(void)
-
 {
+	unsigned long int i;
+	unsigned long int bef = 1;
+	unsigned long int aft = 2;
+	unsigned long int l = 1000000000;
+	unsigned long int bef1;
+	unsigned long int bef2;
+	unsigned long int aft1;
+	unsigned long int aft2;
 
-	int count;
+	printf("%lu", bef);
 
-	unsigned long i, j, k;
-
-	unsigned long m, n, p, carry;
-
-
-
-	count = 0;
-
-	i = 0;
-
-	j = 1;
-
-
-
-	for (count = 1; count <= 91; count++)
-
+	for (i = 1; i < 91; i++)
 	{
-
-		k = i + j;
-
-		i = j;
-
-		j = k;
-
-		printf("%lu, ", k);
-
+		printf(", %lu", aft);
+		aft += bef;
+		bef = aft - bef;
 	}
 
-	m = i % 1000;
+	bef1 = (bef / l);
+	bef2 = (bef % l);
+	aft1 = (aft / l);
+	aft2 = (aft % l);
 
-	i = i / 1000;
-
-	n = j % 1000;
-
-	j = j / 1000;
-
-
-
-	while (count <= 98)
-
+	for (i = 92; i < 99; ++i)
 	{
-
-		carry = (m + n) / 1000;
-
-		p = (m + n) - carry * 1000;
-
-		k = (i + j) + carry;
-
-		m = n;
-
-		n = p;
-
-		i = j;
-
-		j = k;
-
-		if (p >= 100)
-
-			printf("%lu%lu", k, p);
-
-		else
-
-			printf("%lu0%lu", k, p);
-
-		if (count != 98)
-
-			printf(", ");
-
-		count++;
-
+		printf(", %lu", aft1 + (aft2 / l));
+		printf("%lu", aft2 % l);
+		aft1 = aft1 + bef1;
+		bef1 = aft1 - bef1;
+		aft2 = aft2 + bef2;
+		bef2 = aft2 - bef2;
 	}
-
-	putchar('\n');
-
+	printf("\n");
 	return (0);
-
 }

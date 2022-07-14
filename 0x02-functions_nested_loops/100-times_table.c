@@ -1,95 +1,49 @@
 #include "main.h"
 
 /**
- * print - function to print recursively using _putchar
- * @var: variable to be printed
+ *  * print_times_table - prints time table
+ *  * @n : use in times table
+ *  * Return:void*
  */
 
-	void print(int var)
-
-	{
-
-	if (var / 10)
-
-		print(var / 10);
-
-	_putchar('0' + (var % 10));
-
-	}
-
-/**
- * print_times_table - prints the n times table, starting with 0
- * @n: time table to print
- */
-
-	void print_times_table(int n)
-
-	{
-
-	int ii, jj, mul;
+void print_times_table(int n)
+{
+	int a = 0, rep, b;
 
 	if (n < 0 || n > 15)
-
 		return;
-
-	for (ii = 0; ii <= n; ii++)
-
+	while (a <= n)
 	{
-
-		for (jj = 0; jj <= n; jj++)
-
+	for (b = 0; b <= n; b++)
+	{
+		rep = a * b;
+		if (b == 0)
+			_putchar('0' + rep);
+		else if (rep < 10)
 		{
-
-			mul = ii * jj;
-
-			if (jj == 0)
-
-				_putchar('0' + mul);
-
-			else if (mul < 10)
-
-			{
-
-				_putchar(' ');
-
-				_putchar(' ');
-
-				_putchar('0' + mul);
-
-			}
-
-			else if (mul < 100)
-
-			{
-
-				_putchar(' ');
-
-				print(mul);
-
-			}
-
-				else
-
-			{
-
-				print(mul);
-
-			}
-
-			if (jj < n)
-
-			{
-
-				_putchar(',');
-
-				_putchar(' ');
-
-			}
-
+			_putchar(' ');
+			_putchar(' ');
+			_putchar('0' + rep);
 		}
-
-		_putchar('\n');
-
+		else if (rep < 100)
+		{
+			_putchar(' ');
+			_putchar('0' + rep / 10);
+			_putchar('0' + rep % 10);
+		}
+		else
+		{
+			_putchar('0' + rep / 100);
+			_putchar('0' + (rep - 100) / 10);
+			_putchar('0' + rep % 10);
+		}
+		if (b < n)
+		{
+			_putchar(',');
+			_putchar(' ');
+		}
 	}
-
+			_putchar('\n');
+			a++;
+	}
 }
